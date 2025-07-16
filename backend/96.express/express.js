@@ -1,15 +1,15 @@
-import express from 'express'
+import express from 'express'//we can use this only when we have module in package.json in type
 
-const app = express()
+const app = express()//to create express server
 const port = 3001
 
 
-app.use(express.json()) 
+app.use(express.json()) //used to parse a reqques json
 
-let teaData = []
-let nextId = 1
+let teaData = []//to store data
+let nextId = 1// to init index and store in teadata
 
-
+//updates the teadata with data given by user,to perform this go postman and past url and go to body and then raw after that type a json
 app.post('/tea',(req,res)=>{
     const {name,price} = req.body
     const newtea = {
@@ -21,10 +21,12 @@ app.post('/tea',(req,res)=>{
     res.status(201).send(newtea)
 })
 
+//to get the entire array
 app.get('/tea',(req,res)=>{
     res.status(201).send(teaData)
 })
 
+//to find an element using index
 app.get('/tea/:id',(req,res)=>{
     const tea  = teaData.find(t=> t.id === parseInt(req.params.id))
     if (!tea){
@@ -33,6 +35,7 @@ app.get('/tea/:id',(req,res)=>{
     res.status(200).send(tea)
 })
 
+//to update an elemt 
 app.put('/tea/:id',(req,res)=>{
    const tea  = teaData.find(t=> t.id === parseInt(req.params.id))
    
@@ -44,6 +47,7 @@ if (!tea){
     tea.name = name
 })
 
+//deltes an element
 app.delete('/tea/:id',(req,res)=>{
     const index = teaData.findIndex(t=>t.id===parseInt(req.params.id))
     if(index === -1){
@@ -53,7 +57,7 @@ app.delete('/tea/:id',(req,res)=>{
     res.statusCode(200).send(teaData)
 
 })
-
+//listens on port 3001
 app.listen(port,()=>{
 console.log(`prort running on ${port}`)
 })
