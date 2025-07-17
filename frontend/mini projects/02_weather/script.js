@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const descriptiondata = document.getElementById("description")
   const error = document.getElementById("error-message")
   
-  const api = "2d7e90667e2c763a34d9772877fb1c95"
+  const api = "secret"
 
 
   getbutton.addEventListener("click",async()=>{
