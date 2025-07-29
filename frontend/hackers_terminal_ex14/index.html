@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .line {
+      display: block;
+      margin-bottom: 10px;
+      font-family: monospace;
+      color: lime;
+      background: black;
+    }
+
+    .dots span {
+      animation: blink 1s infinite;
+      opacity: 0;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <span class="line">Initialize hacking<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  <span class="line">Reading your files<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  <span class="line">Password file detected<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  <span class="line">Sending to server<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  <span class="line">Cleaning up<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+
+</body>
+</html>
